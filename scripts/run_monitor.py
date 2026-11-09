@@ -39,9 +39,13 @@ def check_youtube_autocomplete(query, target):
     for i, s in enumerate(suggestions[:10], 1):
         clean_s = s.replace(" ", "").lower()
         if clean_target in clean_s:
-            is_exposed = True
             rank = i
             matched_text = s
+            # 10위 밖(10위 이상)은 미노출 처리 (1~9위만 유효 노출)
+            if rank < 10:
+                is_exposed = True
+            else:
+                is_exposed = False
             break
 
     return {
@@ -104,8 +108,9 @@ def get_monthly_matrix(year, month, keywords, records, carry_over=True):
             pm_rec = slot_info["PM"]
             last_rec = slot_info["LAST"]
 
-            am_exp = bool(am_rec and am_rec.get("is_exposed"))
-            pm_exp = bool(pm_rec and pm_rec.get("is_exposed"))
+            # 10위 밖(10위 이상)은 미노출 처리
+            am_exp = bool(am_rec and am_rec.get("is_exposed") and (am_rec.get("rank") is None or am_rec.get("rank") < 10))
+            pm_exp = bool(pm_rec and pm_rec.get("is_exposed") and (pm_rec.get("rank") is None or pm_rec.get("rank") < 10))
 
             if am_exp and pm_exp:
                 credit = 1.0
