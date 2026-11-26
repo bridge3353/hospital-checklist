@@ -525,7 +525,7 @@ def main():
     print(f"✔ Saved records.json ({len(records)} total records, +{new_records_count} new)")
 
     # 3. Render HTMLs for all hospitals
-    for hosp in ["secret", "oho"]:
+    for hosp in ["secret", "oho", "cellislab"]:
         h_dir = os.path.join(BASE_DIR, hosp)
         os.makedirs(h_dir, exist_ok=True)
 
@@ -535,8 +535,8 @@ def main():
             with open(os.path.join(h_dir, fname), "w", encoding="utf-8") as f:
                 f.write(html)
 
-        # index.html
-        default_file = "nov.html" if hosp == "secret" else "sep.html"
+        # index.html (기본은 11월 대시보드로 직통 연결)
+        default_file = "nov.html"
         with open(os.path.join(h_dir, "index.html"), "w", encoding="utf-8") as f:
             with open(os.path.join(h_dir, default_file), "r", encoding="utf-8") as rf:
                 f.write(rf.read())

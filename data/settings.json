@@ -47,14 +47,10 @@
       ]
     },
     "cellislab": {
-      "name": "셀이즈랩",
+      "name": "셀이즈랩의원",
       "slug": "cellislab",
       "keyword_ids": [
-        "kw_cellislab_1",
-        "kw_cellislab_2",
-        "kw_cellislab_3",
-        "kw_cellislab_4",
-        "kw_cellislab_5"
+        "kw_cellislab_nose"
       ]
     }
   },
@@ -137,7 +133,7 @@
       "query": "눈썹거상",
       "target": "양동준원장",
       "display_name": "눈썹거상 양동준원장",
-      "active": true
+      "active": false
     },
     {
       "id": "kw_cellislab_2",
@@ -145,7 +141,7 @@
       "query": "하안검",
       "target": "양동준원장",
       "display_name": "하안검 양동준원장",
-      "active": true
+      "active": false
     },
     {
       "id": "kw_cellislab_3",
@@ -153,7 +149,7 @@
       "query": "쌍꺼풀수술",
       "target": "양동준원장",
       "display_name": "쌍꺼풀수술 양동준원장",
-      "active": true
+      "active": false
     },
     {
       "id": "kw_cellislab_4",
@@ -161,7 +157,7 @@
       "query": "상안검수술",
       "target": "양동준원장",
       "display_name": "상안검수술 양동준원장",
-      "active": true
+      "active": false
     },
     {
       "id": "kw_cellislab_5",
@@ -169,6 +165,14 @@
       "query": "눈밑지방재배치",
       "target": "양동준원장",
       "display_name": "눈밑지방재배치 양동준원장",
+      "active": false
+    },
+    {
+      "id": "kw_cellislab_nose",
+      "hospital": "cellislab",
+      "query": "비개방코성형",
+      "target": "양동준원장",
+      "display_name": "비개방코성형 양동준원장",
       "active": true
     }
   ]
